@@ -1,0 +1,23 @@
+STEP 1. FROM ARDUINO TO FLAME SENSOR:
+
+  A. The GND pin of Arduino is connected to GND pin of Flame Sensor.
+  B. The GPIO pin 11 of Arduino is connected to D0 pin of Flame Sensor.
+
+STEP 2. FROM ARDUINO TO PCB:
+
+  A. The GND pin of Arduino is connected to the GND pin of PCB.
+  B. The VCC(+5v) pin of Arduino is connected to VCC pin of PCB.
+
+STEP 3. FROM ARDUINO TO GSM MODULE:
+
+  A. The Rx pin of Arduino is connected to the Tx pin of GSM Module.
+  B. The Tx pin of Arduino is connected to the Rx pin of GSM Module.
+
+STEP 4. FROM PCB TO ARDUINO:
+
+  A. The buzzer is connected to GPIO pin 12 of Arduino.
+  B. The Red LED is connected to the GPIO pin 5 of Arduino.
+  C. The Green LED is connected to the GPIO pin 6 of Arduino.
+  D. The Relay module is connected to GPIO pin 9 of Arduino.
+
+Note: +5v Power Supply is given via adapters to Arduino and GSM Module individually.
