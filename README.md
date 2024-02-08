@@ -1,40 +1,18 @@
-# Fire-Detection-System
-const int buzzerPin = 12; 
-const int flamePin = 11; 
-int Flame = HIGH; 
-int redled = 5; 
-int greenled = 6; 
-int relay = 9; 
-void setup() 
-{ 
-  pinMode(buzzerPin, OUTPUT); 
-  pinMode(redled, OUTPUT); 
-  pinMode(greenled, OUTPUT); 
-  pinMode(relay, OUTPUT); 
-  pinMode(flamePin, INPUT); 
-  Serial.begin(9600); 
-} 
-void loop() 
-{ 
-  Flame = digitalRead(flamePin); 
-  if (Flame== LOW) 
-  { 
-    Serial.println("ATD0123456789;");     //Insert phone number here
-    digitalWrite(buzzerPin, HIGH); 
-    digitalWrite(redled, HIGH); 
-    digitalWrite(greenled, LOW); 
-    digitalWrite(relay,LOW);
-    Serial.println("AT+CMGF=1"); //Sets the GSM Module in Text Mode 
-    delay(1000); // Delay of 1 second 
-    Serial.println("AT+CMGS=\"+91x\"\r"); // Replace x with mobile number 
-    Serial.println("FIRE IN THE HOUSE");// The SMS text you want to send 
-    Serial.println((char)26); // ASCII of CTRL+Z for saying the end of sms to the module
-  } 
-  else 
-  { 
-    digitalWrite(buzzerPin, LOW); 
-    digitalWrite(greenled, HIGH); 
-    digitalWrite(redled, LOW); 
-    digitalWrite(relay, HIGH); 
-  }
-}
+This system is a basic fire activated alarm. It is built around an Arduino Microcontroller. It is connected to a Flame Sensor, a buzzer, a Relay Module, a resistor, and a GSM Module. Once you have the code, you can connect all the external parts. The easiest way to do this is with a breadboard. This will let you make temporary connections to test everything out. Later, the connections can be made permanent using a PCB. This project contains the code and the connection guide to help create the system. It makes the use of following major components:
+
+  1. Arduino UNO R3
+  2. Flame Sensor
+  3. GSM SIM 900A Module
+  4. Relay Module
+  5. Piezo Buzzer
+  6. LEDs
+  7. Connecting Wires
+  8. Breadboard/PCB
+  9. 5V Battery
+  10. Arduino IDE
+
+The main functionalities that this system provides is: 
+ 1. Fire Detection Via sensor
+ 2. User alerts through call and sms with the help of GSM Module
+ 3. Auto power Cut-off using Relay Module
+ 4. Audio-Visual Alerts to the neighbours by making the use of LEDs and buzzer.
